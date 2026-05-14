@@ -115,7 +115,9 @@ body {
 .stars-display {
   color: var(--star);
   font-size: 1rem;
-  letter-spacing: 2px;
+  display: inline-flex;
+  gap: 1px;
+  line-height: 1;
 }
 
 .stars-display .empty { color: var(--star-empty); }
@@ -168,12 +170,12 @@ body {
 }
 .btn-danger:hover { background: #fbecec; }
 
-.empty {
+.empty-state {
   text-align: center;
   padding: 4rem 1rem;
   color: var(--muted);
 }
-.empty p:first-child { font-size: 3rem; margin: 0; }
+.empty-state p:first-child { font-size: 3rem; margin: 0; }
 
 .hidden { display: none !important; }
 

@@ -27,7 +27,11 @@ if (count === 0) {
     ['Project Hail Mary', 'Andy Weir', 'Science Fiction', 5, '2025-02-20', 'Loved the problem-solving and the unexpected friendship.'],
     ['Educated', 'Tara Westover', 'Memoir', 4, '2025-03-08', 'A harrowing and inspiring story of self-reinvention.'],
     ['The Three-Body Problem', 'Liu Cixin', 'Science Fiction', 4, '2025-03-30', 'Big ideas, slow start but rewarding.'],
-    ['Atomic Habits', 'James Clear', 'Self-help', 3, '2025-04-15', 'Some useful frameworks; a bit repetitive.']
+    ['Atomic Habits', 'James Clear', 'Self-help', 3, '2025-04-15', 'Some useful frameworks; a bit repetitive.'],
+    ['Klara and the Sun', 'Kazuo Ishiguro', 'Fiction', 4, '2025-05-02', 'Quiet, melancholy, beautifully observed.'],
+    ['Sapiens', 'Yuval Noah Harari', 'Non-fiction', 4, '2025-06-10', 'Sweeping and provocative, sometimes overreaches.'],
+    ['Dune', 'Frank Herbert', 'Science Fiction', 5, '2025-07-22', 'A masterwork of world-building and politics.'],
+    ['The Remains of the Day', 'Kazuo Ishiguro', 'Fiction', 5, '2025-08-14', 'Restrained, devastating, perfectly paced.']
   ];
   const tx = db.transaction((rows) => rows.forEach((r) => insert.run(...r)));
   tx(seed);

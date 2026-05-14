@@ -22,7 +22,7 @@ function fmtDate(iso) {
 function renderStars(rating) {
   let s = '';
   for (let i = 1; i <= 5; i++) {
-    s += i <= rating ? '★' : '<span class="empty">★</span>';
+    s += i <= rating ? '<span>★</span>' : '<span class="empty">★</span>';
   }
   return s;
 }
