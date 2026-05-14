@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Bookshelf</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>My Bookshelf</h1>
+    <button id="addBtn" class="btn btn-primary">+ Add Book</button>
+  </header>
+
+  <main class="container">
+    <div class="toolbar">
+      <label>
+        Genre
+        <select id="genreFilter">
+          <option value="">All genres</option>
+        </select>
+      </label>
+      <label>
+        Sort
+        <select id="sortBy">
+          <option value="date_desc">Date finished ↓</option>
+          <option value="date_asc">Date finished ↑</option>
+          <option value="rating_desc">Rating ↓</option>
+          <option value="rating_asc">Rating ↑</option>
+        </select>
+      </label>
+    </div>
+
+    <section id="bookGrid" class="grid" aria-live="polite"></section>
+    <div id="emptyState" class="empty hidden">
+      <p>📚</p>
+      <p>No books found</p>
+    </div>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <h2 id="modalTitle">Add Book</h2>
+      <form id="bookForm" novalidate>
+        <input type="hidden" id="bookId" />
+
+        <div class="field">
+          <label for="title">Title *</label>
+          <input type="text" id="title" name="title" />
+          <span class="error" data-error="title"></span>
+        </div>
+
+        <div class="field">
+          <label for="author">Author *</label>
+          <input type="text" id="author" name="author" />
+          <span class="error" data-error="author"></span>
+        </div>
+
+        <div class="field">
+          <label for="genre">Genre *</label>
+          <input type="text" id="genre" name="genre" list="genreList" />
+          <datalist id="genreList"></datalist>
+          <span class="error" data-error="genre"></span>
+        </div>
+
+        <div class="field">
+          <fieldset class="rating-picker">
+            <legend>Rating *</legend>
+            <div class="stars" id="ratingStars">
+              <input type="radio" id="r1" name="rating" value="1" /><label for="r1" title="1 star">★</label>
+              <input type="radio" id="r2" name="rating" value="2" /><label for="r2" title="2 stars">★</label>
+              <input type="radio" id="r3" name="rating" value="3" /><label for="r3" title="3 stars">★</label>
+              <input type="radio" id="r4" name="rating" value="4" /><label for="r4" title="4 stars">★</label>
+              <input type="radio" id="r5" name="rating" value="5" /><label for="r5" title="5 stars">★</label>
+            </div>
+          </fieldset>
+          <span class="error" data-error="rating"></span>
+        </div>
+
+        <div class="field">
+          <label for="date_finished">Date finished *</label>
+          <input type="date" id="date_finished" name="date_finished" />
+          <span class="error" data-error="date_finished"></span>
+        </div>
+
+        <div class="field">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+          <button type="submit" id="submitBtn" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

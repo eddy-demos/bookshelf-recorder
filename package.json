@@ -1,0 +1,13 @@
+{
+  "name": "bookshelf-recorder",
+  "version": "1.0.0",
+  "description": "Track books I've read",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.21.0"
+  }
+}
