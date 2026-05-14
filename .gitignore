@@ -1,0 +1,4 @@
+node_modules/
+books.db
+books.db-wal
+books.db-shm
